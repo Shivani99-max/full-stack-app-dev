@@ -71,6 +71,6 @@ def login():
         # avoid storing password in token store
         user_safe = {k: v for k, v in user.items() if k != "password"}
         TOKENS[token] = user_safe
-        return jsonify({"token": token, "role": user_safe.get("role"), "name": user_safe.get("name")})
+        return jsonify({"token": token, "role": user_safe.get("role"), "name": user_safe.get("name"), "user_id": user_safe.get("id")})
     else:
         return jsonify({"error": "Invalid credentials"}), 401
