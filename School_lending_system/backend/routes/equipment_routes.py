@@ -14,6 +14,7 @@ def get_equipment():
     conn.close()
     return jsonify(data)
 
+
 @equipment_bp.route("/equipment", methods=["POST"])
 def add_equipment():
     data = request.get_json()
