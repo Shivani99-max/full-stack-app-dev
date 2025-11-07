@@ -7,6 +7,7 @@ auth_bp = Blueprint("auth_bp", __name__)
 
 TOKENS = {}  # simple token simulation
 
+
 @auth_bp.route("/signup", methods=["POST"])
 def signup():
     data = request.get_json()
